@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  post:
+    container_name: food-shop
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dimonchikamen/pet-food:latest
+    ports:
+      - 80:80

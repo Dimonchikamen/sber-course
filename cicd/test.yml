@@ -1,0 +1,13 @@
+tests:
+  tags:
+    - '#reactjs' 
+  stage: test
+  script:
+    - npm run test
+
+tsc:
+  tags:
+    - '#reactjs' 
+  stage: test
+  script:
+    - npm run tsc

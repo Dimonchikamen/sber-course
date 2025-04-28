@@ -1,0 +1,36 @@
+deploy_docker:
+  tags:
+    - '#dockerhub'
+  image: docker:19.03.12
+  services:
+    - docker:19.03.12-dind
+  stage: package
+  needs: 
+    - tests
+    - tsc
+  variables:
+    IMAGE_TAG: $CI_REGISTRY/$CI_REGISTRY_USER/$PROJECT_NAME
+    DOCKER_HOST: "tcp://docker:2375"
+    DOCKER_TLS_CERTDIR: ""
+    BUILD_PATH: "."
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $IMAGE_TAG $BUILD_PATH
+    - docker push $IMAGE_TAG:latest
+    - docker logout $CI_REGISTRY
+
+pages:
+  tags:
+    - '#reactjs' 
+  image: alpine:latest
+  stage: deploy
+  needs: 
+    - build_dist
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - rm -rf public
+    - mv build public
+  artifacts:
+    paths:
+      - public

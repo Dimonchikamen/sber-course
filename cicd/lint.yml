@@ -1,0 +1,24 @@
+install_dependencies:
+  tags:
+    - '#reactjs' 
+  stage: lint
+  script:
+    - npm ci
+
+eslint:
+  tags:
+    - '#reactjs' 
+  needs: 
+    - install_dependencies
+  stage: lint
+  script:
+    - npm run lint
+
+stylelint:
+  tags:
+    - '#reactjs' 
+  needs: 
+    - install_dependencies
+  stage: lint
+  script:
+    - npm run stylelint

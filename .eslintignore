@@ -1,0 +1,11 @@
+/node_modules
+/public
+.eslintrc.js
+/storybook-static
+/build
+/dist
+/config
+/server
+package*.json
+src/**/*.test.ts
+src/**/__mocks/**

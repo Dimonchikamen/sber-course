@@ -1,0 +1,15 @@
+default:
+  image: node:18
+  cache:
+    - key:
+        files:
+          - package-lock.json
+      paths:
+        - node_modules/
+
+include: 
+  - local: cicd/base.yml
+  - local: cicd/lint.yml
+  - local: cicd/test.yml
+  - local: cicd/build.yml
+  - local: cicd/deploy.yml

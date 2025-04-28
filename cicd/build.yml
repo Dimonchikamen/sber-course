@@ -1,0 +1,10 @@
+build_dist:
+  tags:
+    - '#reactjs'
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - build/
+

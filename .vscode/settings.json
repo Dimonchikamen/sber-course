@@ -1,0 +1,19 @@
+{
+    "liveServer.settings.donotShowInfoMsg": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "workbench.tree.indent": 20,
+    "prettier.tabWidth": 4,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "cSpell.language": "en,ru",
+    "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+    "stylelint.valudate": ["css", "scss"],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll.stylelint": "explicit"
+    },
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true
+}
+

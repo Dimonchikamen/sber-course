@@ -1,0 +1,6 @@
+stages:
+  - lint
+  - test
+  - build
+  - package
+  - deploy
